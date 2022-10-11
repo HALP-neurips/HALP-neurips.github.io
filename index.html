@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-svg" href="./images/nvidia.svg">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://kit.fontawesome.com/8290b48404.js" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="./dist/style.css">
+
+    <title>Structural Pruning via Latency-Saliency Knapsack</title>
+</head>
+<body>
+    <div class="main container">
+        <!-- <nav class="menu">
+            <ul>
+                <li><a href="#news">News</a></li>
+                <li><a href="https://arxiv.org/abs/2112.07658">Paper</a></li>
+            </ul>
+        </nav> -->
+
+        <div class="wrapper">
+            <div class="wrapper-title">
+                <div id="title">Structural Pruning via Latency-Saliency Knapsack</div>
+            </div>
+
+            <div class="wrapper-crew">
+                <div class="crew">
+                    <ul>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="" href="https://mayings.github.io/">Maying Shen</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="" href="https://hongxu-yin.github.io/">Hongxu Yin</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="" href="https://www.pmolchanov.com/">Pavlo Molchanov</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="" href="https://leimao.github.io/">Lei Mao</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="" href="">Jianna Liu</a></li>
+                        <li class="wow animate__animated animate__fadeInUp"><a target="_blank" class="" href="https://alvarezlopezjosem.github.io/">Jose M. Alvarez</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wrapper-main-download">
+                <div class="main-download">
+                    <figure>
+                        <img src="./images/nvidia.svg" alt="">
+                    </figure>
+                    <h2>NeurIPS 2022</h2>
+                    <img class="lg" src="./images/logo.jpeg" alt="">
+                    <div class="download-btn">
+                        <a class="wow animate__animated animate__lightSpeedInLeft" target="_blank" href="https://arxiv.org/abs/2110.10811"><i class="far fa-sticky-note"></i> Paper (ArXiv) </a>
+                        <a class="wow animate__animated animate__lightSpeedInRight" target="_blank" href="https://github.com/NVlabs/HALP"><i class="fas fa-file-code"></i> Code (to come)</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper-articles">
+                <div class="article">
+
+                </div>
+
+
+                <div id="news" class="article">
+                    <div class="title">
+                        <span>News</span>
+                    </div>
+                    <div class="news-wrapper">
+                        <ul>
+                            <li><i class="fa-solid fa-rss"></i> [Oct. 2022] <a target="_blank" href="">Code</a> will be released later.</li>
+                            <li><i class="fa-solid fa-rss"></i> [Sep. 2022] Our paper has been accepted to <a target="_blank" href="https://nips.cc/">NeurIPS 2022</a>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="title">
+                        <span>Abstract</span>
+                    </div>
+                    <article>
+                        <figure class="article-image">
+                        <!-- <img class="wow animate__animated animate__fadeInLeft" src="./images/client_server.png" alt=""> -->
+                        <!-- <figcaption>*Equal contribution.**Equal advising.</figcaption> -->
+                        <img class="wow animate__animated animate__fadeInLeft" src="./img_source/results-teaser.png" alt="">
+                        </figure>
+                        <p> We propose Hardware-Aware Latency Pruning (HALP) that formulates structural pruning as a global resource allocation optimization problem, aiming at maximizing the accuracy while constraining latency under a predefined budget on targeting device. For filter importance ranking, HALP leverages latency lookup table to track latency reduction potential and global saliency score to gauge accuracy drop. Both metrics can be evaluated very efficiently during pruning, allowing us to reformulate global structural pruning under a reward maximization problem given target constraint. This makes the problem solvable via our augmented knapsack solver, enabling HALP to surpass prior work in pruning efficacy and accuracy-efficiency trade-off. It consistently outperforms prior art by large margins (see NVIDIA Titan V speedups above, and more hardware results next and in paper).</p>
+                    </article>
+                    <!-- <figure class="article-image"></figure> -->
+                </div>
+
+                <div class="article">
+                    <div class="title">
+                        <span>Key Approach</span>
+                    </div>
+                    <article>
+                        <p>
+                          The proposed hardware-aware latency pruning (HALP) paradigm. Considering both performance and latency contributions, HALP formulates global structural pruning as a global resource allocation problem (Section 3.1), solvable using our augmented Knapsack algorithm (Section 3.2). Pruned architectures surpass prior work across varying latency constraints given changing network architectures for both classification and detection tasks (Section 4).</p>
+                    </article>
+
+                    <figure class="article-image">
+                        <img class="wow animate__animated animate__fadeInRight" src="./img_source/pipeline.png" alt="">
+                        <figcaption>
+                            Our HALP paradigm on latency-saliency Knapsack.
+                        </figcaption>
+                    </figure>
+
+                    </figure>
+                </div>
+
+
+                <div class="article">
+                    <div class="title">
+                        <span>More Results</span>
+                    </div>
+                    <article>
+                        <p>
+                          Our approach is fast and scalable across a wide range of target platforms for measured latency improvements. As an example, we show pruning results of ResNet50 on the ImageNet dataset with NVIDIA Jetson TX2 (left), Intel CPU Xeon E5 (middle) and NVIDIA Xavier (right). The latency on Jetson TX2 and CPU is measured using PyTorch; on Xavier is measured using TensorRT FP32.
+                        Please refer to the paper for more details.</p>
+                    </article>
+
+                    <figure class="article-image">
+                        <img class="wow animate__animated animate__fadeInRight" src="./img_source/more-results.png" alt="">
+                    </figure>
+
+                    </figure>
+                </div>
+
+
+            </div>
+
+            <div class="paper">
+            <div id="paper" class="wrapper-extra-links">
+                <div class="extra-link">
+                    <div class="paper-pic">
+                        <span class="paper-title">Paper</span>
+                        <figure>
+                            <a target="_blank" href="https://arxiv.org/abs/2110.10811"><img src="./img_source/HALP-front-page.png" alt=""></a>
+                        </figure>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Structural Pruning via Latency-Saliency Knapsack, NeurIPS 2022.
+                        </p>
+                        <a target="_blank" href="https://arxiv.org/abs/2110.10811">paper (to be updated)</a>
+                    </div>
+                </div>
+            </div>
+
+           </div>
+
+            <div class="wrapper-code">
+                <span class="title">Bibtex</span>
+                    <pre>
+
+    <code id="code">
+
+    @inproceedings{shen2022structural,
+        title={Structural Pruning via Latency-Saliency Knapsack},
+        author={Shen, Maying and Yin, Hongxu and Molchanov, Pavlo and Mao, Lei and Liu, Jianna and Alvarez, Jose},
+        booktitle={Advances in Neural Information Processing Systems},
+        year={2022}
+    }
+                        </code>
+                    </pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dist/js/wow.min.js"></script>
+    <script src="./dist/js/main.js"></script>
+</body>
+</html>
