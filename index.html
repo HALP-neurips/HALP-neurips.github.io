@@ -124,24 +124,55 @@
                     <figure class="article-image">
                         <img class="wow animate__animated animate__fadeInRight" src="./img_source/more-results.png" alt="">
                     </figure>
+                </div>
+
+                <br />
+                <br />
+                <div class="article">
+                    <div class="title">
+                        <span>Application on 3D object detection and algorithm improvement</span>
+                    </div>
+                    <article>
+                        <p>
+                            We further show the efficacy of the method on 3D object detection task and improve the algorithm in the following works:
+                        </p>
+                        <p>
+                            <i>Hardware-Aware Latency Pruning for Read-Time 3D Object Detection (IEEE IV 2023).</i>
+                        </p>
+                        <p>
+                            <i>Soft Masking for Cost-Constrained Channel Pruning (ECCV 2022)</i>, where we improve the pruning performance especially for the large prune ratios.
+                        </p>
+                        <p>
+                            <i>Adaptive Sharpness-Aware Pruning for Robust Sparse Networks</i>, where we aim at improving the robustness of compact models.
+                        </p>
+                    </article>
+
+                    <br />
+                    <br />
+                    <h2 style="text-align: center;">Hardware-Aware Latency Pruning for Read-Time 3D Object Detection</h2>
+                    <hr>
 
                     <article>
                         <p>
-                          We also present experiments on pruning for multi-camera 3D object detection and show the effectiveness of train large, then compress in the context of 3D object detection. For comparison, we use three different architectures (compact architecture search by NAS, ResNet18 and ResNet50) for the backbones and the encoder. We observe that:
+                          We present experiments on pruning for multi-camera 3D object detection and show the effectiveness of train large, then compress in the context of 3D object detection. For comparison, we use three different architectures (compact architecture search by NAS, ResNet18 and ResNet50) for the backbones and the encoder. We observe that:
                         </p>
                         <p>
-                            1. Light pruning these 3 architectures all yield a significant speedup with a similar accuracy compared to their dense counterpart;
+                            1. Light pruning these architectures all yield a significant speedup with a similar accuracy compared to their dense counterpart;
                         </p>
                         <p>
                             2. Pruning a larger model to match the latency of a smaller one leads to better performance;
                         </p>
                         <p>
-                            3. The performance of pruning a much larger model might be constrained by the model depth.
+                            3. The performance of pruning a much larger model might be constrained by the model depth. Channel pruning should be considered to benefit the latency.
                         </p>
                     </article>
 
                     <figure class="article-image">
-                        <img class="wow animate__animated animate__fadeInRight" src="./img_source/IV_obs3d_result.png" alt="" style="width:50%">
+                        <img class="wow animate__animated animate__fadeInUp" src="./img_source/obs3d_pipeline.png" alt="">
+                    </figure>
+
+                    <figure class="article-image">
+                        <img class="wow animate__animated animate__fadeInUp" src="./img_source/IV_obs3d_result.png" alt="" style="width:50%">
                     </figure>
 
                     </figure>
@@ -164,6 +195,24 @@
                             Structural Pruning via Latency-Saliency Knapsack, NeurIPS 2022.
                         </p>
                         <a target="_blank" href="https://arxiv.org/abs/2210.06659">paper</a>
+                        &nbsp;
+                        <a target="_blank" href="https://github.com/NVlabs/HALP">code</a>
+                    </div>
+                </div>
+
+                <div class="extra-link">
+                    <div class="paper-pic">
+                        <figure>
+                            <a target="_blank" href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136710640.pdf"><img src="./img_source/smcp-front-page.png" alt=""></a>
+                        </figure>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Soft Masking for Cost-Constrained Channel Pruning, ECCV 2023.
+                        </p>
+                        <a target="_blank" href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136710640.pdf">paper</a>
+                        &nbsp;
+                        <a target="_blank" href="https://github.com/NVlabs/SMCP">code</a>
                     </div>
                 </div>
 
@@ -176,6 +225,20 @@
                     <div class="description">
                         <p>
                             Hardware-Aware Latency Pruning for Real-Time 3D Object Detection, IEEE IV 2023.
+                        </p>
+                        <a target="_blank" href="">paper (to be published)</a>
+                    </div>
+                </div>
+
+                <div class="extra-link">
+                    <div class="paper-pic">
+                        <figure>
+                            <a target="_blank" href=""><img src="./img_source/AdaSAP-front-page.png" alt=""></a>
+                        </figure>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Adaptive Sharpness-Aware Pruning for Robust Sparse Networks.
                         </p>
                         <a target="_blank" href="">paper (to be published)</a>
                     </div>
@@ -196,6 +259,13 @@
         booktitle={Advances in Neural Information Processing Systems},
         year={2022}
     }
+
+    @article{Humble2022pruning,
+        title={Soft Masking for Cost-Constrained Channel Pruning},
+        author={Humble, Ryan and Shen, Maying  and Albericio-Latorre, Jorge and Darve, Eric and Alvarez, Jose M},
+        journal={ECCV},
+        year={2022}
+      }
 
     @inproceedings{shen2023halp3d,
         title={Hardware-Aware Latency Pruning for Real-Time 3D Object Detection},
